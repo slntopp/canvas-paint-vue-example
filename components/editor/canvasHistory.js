@@ -13,7 +13,7 @@ export default (function () {
       this.canvas = canvas
       const currentCanvas = this.canvas.toJSON()
       currentCanvas.objects.forEach(function (object) {
-        if (object.type == 'lineArrow') {
+        if (object.type === 'lineArrow') {
           object.heads = [1, 0]
         }
       })
@@ -22,7 +22,7 @@ export default (function () {
       if (cropObject) {
         currentJson = Object.assign(currentJson, cropObject)
         currentJson.json.objects.forEach(function (object) {
-          if (object.type == 'lineArrow') {
+          if (object.type === 'lineArrow') {
             object.heads = [1, 0]
           }
         })

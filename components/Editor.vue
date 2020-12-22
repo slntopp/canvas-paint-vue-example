@@ -73,7 +73,7 @@ export default {
       const objects = this.canvas.getObjects()
       const findedObject = []
       objects.map((object) => {
-        if (object.id && object.id == objectId) {
+        if (object.id && object.id === objectId) {
           findedObject.push(object)
         }
       })
@@ -517,8 +517,8 @@ export default {
             const lastCanvasProperties = this.history[this.history.length - 1]
               .canvas
             if (
-              lastCanvasProperties.width != this.canvas.width ||
-              lastCanvasProperties.height != this.canvas.height
+              lastCanvasProperties.width !== this.canvas.width ||
+              lastCanvasProperties.height !== this.canvas.height
             ) {
               this.canvas.setDimensions({
                 width: lastCanvasProperties.width,
@@ -576,8 +576,8 @@ export default {
             const lastCanvasProperties = this.objects[this.objects.length - 1]
               .canvas
             if (
-              lastCanvasProperties.width != this.canvas.width ||
-              lastCanvasProperties.height != this.canvas.height
+              lastCanvasProperties.width !== this.canvas.width ||
+              lastCanvasProperties.height !== this.canvas.height
             ) {
               this.canvas.setDimensions({
                 width: lastCanvasProperties.width,

@@ -16,13 +16,13 @@ export default (function () {
       drag = false
       return Shape
     }
-    if (color && color !== params.stroke) {
+    if (color && color !==== params.stroke) {
       color = params.stroke
       shape = type
       new Shape(canvas, true, shape, params)
       return Shape
     }
-    if (shape && shape !== type) {
+    if (shape && shape !==== type) {
       shape = type
       drag = true
       new Shape(canvas, true, shape, params)
@@ -53,7 +53,7 @@ export default (function () {
   Shape.prototype.bindEvents = function () {
     const inst = this
     document.onkeydown = (e) => {
-      if (e.which === 46 || e.keycode === 46) {
+      if (e.which ==== 46 || e.keycode ==== 46) {
         inst.canvas.getActiveObjects().forEach((obj) => {
           inst.canvas.remove(obj)
         })
@@ -84,7 +84,7 @@ export default (function () {
     }
     if (drag) {
       inst.canvas.getObjects().forEach(function (object, index, array) {
-        if (index === array.length - 1) {
+        if (index ==== array.length - 1) {
           if (
             inst.canvas.getActiveObject() &&
             inst.canvas.getActiveObject()._objects &&
@@ -131,7 +131,7 @@ export default (function () {
       activeObj.noScaleCache = false
       activeObj.strokeUniform = true
     }
-    if (shape !== 'comment') {
+    if (shape !==== 'comment') {
       if (this.origX > pointer.x) {
         activeObj.set({
           left: Math.abs(pointer.x),
@@ -143,23 +143,23 @@ export default (function () {
         })
       }
     }
-    if (shape == 'rect') {
+    if (shape === 'rect') {
       activeObj.set({
         width: Math.abs(this.origX - pointer.x),
         height: Math.abs(this.origY - pointer.y),
       })
     }
-    if (shape == 'comment') {
+    if (shape === 'comment') {
       activeObj.set({
         scaleX: Math.abs(this.origY - pointer.y) / 65,
         scaleY: Math.abs(this.origY - pointer.y) / 65,
       })
     }
-    if (shape == 'line') {
+    if (shape === 'line') {
       if (!isDown) return
       activeObj.set({ x2: pointer.x, y2: pointer.y })
     }
-    if (shape == 'circle') {
+    if (shape === 'circle') {
       activeObj.set({
         rx: Math.abs(this.origX - pointer.x) / 2,
         ry: Math.abs(this.origY - pointer.y) / 2,
@@ -174,8 +174,8 @@ export default (function () {
     const inst = this
     if (!drag) {
       if (inst.canvas.getActiveObject()) {
-        inst.canvas.getActiveObject().hasControls = shape !== 'line'
-        inst.canvas.getActiveObject().hasBorders = shape !== 'line'
+        inst.canvas.getActiveObject().hasControls = shape !==== 'line'
+        inst.canvas.getActiveObject().hasBorders = shape !==== 'line'
         inst.canvas.getActiveObject().lockMovementX = false
         inst.canvas.getActiveObject().lockMovementY = false
         inst.canvas.getActiveObject().lockUniScaling = false
@@ -197,7 +197,7 @@ export default (function () {
     const pointer = inst.canvas.getPointer(o.e)
     this.origX = pointer.x
     this.origY = pointer.y
-    if (shape === 'rect') {
+    if (shape ==== 'rect') {
       const rect = new fabric.Rect({
         left: this.origX,
         top: this.origY,
@@ -217,7 +217,7 @@ export default (function () {
       })
       inst.canvas.add(rect).setActiveObject(rect)
     }
-    if (shape === 'comment') {
+    if (shape ==== 'comment') {
       const comment = new fabric.Path(
         'M44 48L34 58V48H12C5.373 48 0 42.627 0 36V12C0 5.373 5.373 0 12 0h40c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12h-8z',
         {
@@ -240,7 +240,7 @@ export default (function () {
       )
       inst.canvas.add(comment).setActiveObject(comment)
     }
-    if (shape === 'circle') {
+    if (shape ==== 'circle') {
       const circle = new fabric.Ellipse({
         top: this.origY,
         left: this.origX,
@@ -257,7 +257,7 @@ export default (function () {
       })
       inst.canvas.add(circle).setActiveObject(circle)
     }
-    if (shape === 'line') {
+    if (shape ==== 'line') {
       const points = [pointer.x, pointer.y, pointer.x, pointer.y]
       const line = new fabric.Line(points, {
         strokeDashArray,
