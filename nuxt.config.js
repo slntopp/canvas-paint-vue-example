@@ -14,7 +14,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ["@/plugins/antd-ui"],
+  plugins: ['@/plugins/antd-ui'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -27,20 +27,20 @@ export default {
 
   pwa: {
     meta: {
-      name: "Paint by JokerShpoker",
-      description: "Paint от JokerShpoker",
+      name: 'Paint by JokerShpoker',
+      description: 'Paint от JokerShpoker',
       mobileApp: true,
       mobileAppIOS: true,
-      nativeUI: true
+      nativeUI: true,
     },
     icon: {
-      fileName: "app-icon.png"
+      fileName: 'app-icon.png',
     },
     manifest: {
-      name: "Paint by JokerShpoker",
-      lang: "ru",
-      useWebmanifestExtension: false
-    }
+      name: 'Paint by JokerShpoker',
+      lang: 'ru',
+      useWebmanifestExtension: false,
+    },
   },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -52,16 +52,17 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     loaders: {
-     less: {
-       lessOptions: {
-         javascriptEnabled: true,
-       },
+      less: {
+        lessOptions: {
+          javascriptEnabled: true,
+        },
       },
     },
   },
 
   server: {
-    host: "0.0.0.0",
-    port: 5000
-  }
+    host: '0.0.0.0',
+    port: 5000,
+  },
+  ssr: false,
 }
