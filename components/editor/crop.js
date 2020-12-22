@@ -25,7 +25,7 @@ export default (function () {
       this.canvas.remove(rectRed)
       const inst = this
       this.canvas.getObjects().forEach(function (object) {
-        if (object.id ==== 'clonedCanvasImage') {
+        if (object.id === 'clonedCanvasImage') {
           inst.canvas.remove(object)
         }
       })

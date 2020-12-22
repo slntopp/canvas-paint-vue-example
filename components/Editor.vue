@@ -593,8 +593,7 @@ export default {
             this.objects[this.objects.length - 1].imagePosition &&
             this.objects[this.objects.length - 1].croppedImage
           ) {
-            let currentProperties
-            currentProperties = this.objects[this.objects.length - 1]
+            const currentProperties = this.objects[this.objects.length - 1]
               .imagePosition
             const inst = this
             fabric.Image.fromURL(

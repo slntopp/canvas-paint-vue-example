@@ -16,5 +16,13 @@ module.exports = {
   ],
   plugins: ['prettier'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'no-new': 'off',
+    'no-prototype-builtins': 'off',
+    'no-sequences': 'off',
+    'no-unused-vars': 'warn',
+    'no-case-declarations': 'off',
+    'new-cap': 'off',
+    'no-unused-expressions': 'warn',
+  },
 }
