@@ -4,8 +4,22 @@
       <h1 style="color: white">JokerShpoker Paint</h1>
     </a-layout-header>
     <a-layout>
-      <a-layout-sider>
-        <a-col :span="24"></a-col>
+      <a-layout-sider width="4rem">
+        <a-row type="flex" justify="space-around" style="margin-top: 15px">
+          <a-col :span="20">
+            <a-row style="background-color: white; border-radius: 10px">
+              <one :color="color" />
+            </a-row>
+          </a-col>
+        </a-row>
+        <a-row type="flex" justify="space-around" style="margin-top: 15px">
+          <a-col :span="20">
+            <palette
+              :colors="['#fff', '#f00', '#0f0', '#00f', '#000']"
+              @click="(c) => (color = c)"
+            />
+          </a-col>
+        </a-row>
       </a-layout-sider>
       <a-layout-content
         ><editor
@@ -20,10 +34,35 @@
 </template>
 
 <script>
+import One from '~/components/controls/color/one.vue'
+import Palette from '~/components/controls/color/palette.vue'
 import Editor from '~/components/Editor.vue'
 
 export default {
-  components: { Editor },
+  components: { Editor, Palette, One },
+  data() {
+    return {
+      mode: '',
+      color: '',
+    }
+  },
+  watch: {
+    mode() {
+      this.smthChanged()
+    },
+    color() {
+      this.smthChanged()
+    },
+  },
+  mounted() {
+    this.color = '#fff'
+    this.mode = 'freeDrawing'
+  },
+  methods: {
+    smthChanged() {
+      this.$refs.editor.set(this.mode, { stroke: this.color })
+    },
+  },
 }
 </script>
 
