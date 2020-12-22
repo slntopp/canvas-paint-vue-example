@@ -10,7 +10,7 @@
       margin: '3px',
       backgroundColor: color,
     }"
-    v-on:click="$emit('click')"
+    @click="$emit('click')"
   ></div>
 </template>
 
