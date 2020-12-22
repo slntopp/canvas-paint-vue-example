@@ -4,7 +4,7 @@
       <a-icon
         :type="tool.icon"
         @click="$emit('click', tool.cb)"
-        style="font-size: 3rem; border-radius: 10px; padding: 4px"
+        style="font-size: 2.5rem; border-radius: 10px; padding: 4px"
         :class="mode == tool.mode ? 'selected' : ''"
       />
     </a-col>
@@ -17,6 +17,9 @@ export default {
     mode: {
       required: true,
       type: String,
+    },
+    editor: {
+      required: true,
     },
   },
   data() {

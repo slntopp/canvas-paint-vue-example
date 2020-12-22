@@ -30,10 +30,29 @@
       /></a-layout-content>
     </a-layout>
     <a-layout-footer>
-      <tools-palette
-        @click="(cb) => (mode = cb(mode, $refs.editor))"
-        :mode="mode"
-      />
+      <a-row>
+        <a-col>
+          <tools-palette
+            @click="(cb) => (mode = cb(mode, $refs.editor))"
+            :mode="mode"
+            :editor="$refs.editor"
+          />
+        </a-col>
+        <a-col>
+          <input
+            id="chooseImage"
+            style="visibility: hidden"
+            type="file"
+            @change="upload"
+            accept="image/*"
+          />
+          <a-icon
+            @click="triggerUpload"
+            type="cloud-upload"
+            style="font-size: 2.5rem; border-radius: 10px; padding: 4px"
+          />
+        </a-col>
+      </a-row>
     </a-layout-footer>
   </a-layout>
 </template>
@@ -75,6 +94,12 @@ export default {
   methods: {
     smthChanged() {
       this.$refs.editor.set(this.mode, { stroke: this.color })
+    },
+    triggerUpload() {
+      document.getElementById('chooseImage').click()
+    },
+    upload(e) {
+      this.$refs.editor.uploadImage(e)
     },
   },
 }
