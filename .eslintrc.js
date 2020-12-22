@@ -20,9 +20,9 @@ module.exports = {
     'no-new': 'off',
     'no-prototype-builtins': 'off',
     'no-sequences': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
     'no-case-declarations': 'off',
     'new-cap': 'off',
-    'no-unused-expressions': 'warn',
+    'no-unused-expressions': 'off',
   },
 }
