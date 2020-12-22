@@ -2,14 +2,14 @@
   <a-row type="flex" justify="space-between">
     <a-col v-for="tool in tools" :key="tool.icon">
       <a-icon
-        :span="4"
+        :span="2"
         :type="tool.icon"
         @click="$emit('click', tool.cb)"
         style="font-size: 2.2rem; border-radius: 10px; padding: 4px"
         :class="mode == tool.mode ? 'selected' : ''"
       />
     </a-col>
-    <a-col :span="4">
+    <a-col :span="2">
       <a-icon
         @click="triggerUpload"
         type="cloud-upload"
@@ -51,6 +51,11 @@ export default {
           icon: 'highlight',
           mode: 'freeDrawing',
           cb: () => 'freeDrawing',
+        },
+        {
+          icon: 'yuque',
+          mode: 'eraser',
+          cb: () => 'eraser',
         },
         {
           icon: 'border',
