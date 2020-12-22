@@ -44,6 +44,21 @@ export default {
           mode: 'circle',
           cb: () => 'circle',
         },
+        {
+          icon: 'cloud-download',
+          cb: (mode, editor) => {
+            console.log()
+            const linkSource = editor.saveImage()
+            const downloadLink = document.createElement('a')
+            document.body.appendChild(downloadLink)
+
+            downloadLink.href = linkSource
+            downloadLink.target = '_self'
+            downloadLink.download = 'Untitled'
+            downloadLink.click()
+            return mode
+          },
+        },
       ],
     }
   },
