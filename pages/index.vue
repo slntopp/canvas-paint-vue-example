@@ -24,27 +24,38 @@
       <a-layout-content
         ><editor
           ref="editor"
-          :canvas-width="1024"
-          :canvas-height="720"
+          :canvas-width="cv.width"
+          :canvas-height="cv.height"
           editor-id="canvasId"
       /></a-layout-content>
     </a-layout>
-    <a-layout-footer></a-layout-footer>
+    <a-layout-footer>
+      <tools-palette @click="(cb) => (mode = cb(mode, $refs.editor))" />
+    </a-layout-footer>
   </a-layout>
 </template>
 
 <script>
 import One from '~/components/controls/color/one.vue'
 import Palette from '~/components/controls/color/palette.vue'
+import ToolsPalette from '~/components/controls/tools/'
 import Editor from '~/components/Editor.vue'
 
 export default {
-  components: { Editor, Palette, One },
+  components: { Editor, Palette, One, ToolsPalette },
   data() {
     return {
       mode: '',
       color: '',
     }
+  },
+  computed: {
+    cv() {
+      return {
+        height: window.innerHeight - 160,
+        width: window.innerWidth - 64,
+      }
+    },
   },
   watch: {
     mode() {
