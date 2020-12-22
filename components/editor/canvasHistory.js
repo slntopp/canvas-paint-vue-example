@@ -1,5 +1,3 @@
-import { fabric } from 'fabric'
-
 export default (function () {
   const history = []
   function CanvasHistory(canvas, cropObject = false, redoHistory = false) {
