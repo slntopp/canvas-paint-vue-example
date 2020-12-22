@@ -2,10 +2,25 @@
   <a-row type="flex" justify="space-between">
     <a-col v-for="tool in tools" :key="tool.icon">
       <a-icon
+        :span="4"
         :type="tool.icon"
         @click="$emit('click', tool.cb)"
-        style="font-size: 2.5rem; border-radius: 10px; padding: 4px"
+        style="font-size: 2.2rem; border-radius: 10px; padding: 4px"
         :class="mode == tool.mode ? 'selected' : ''"
+      />
+    </a-col>
+    <a-col :span="4">
+      <a-icon
+        @click="triggerUpload"
+        type="cloud-upload"
+        style="font-size: 2.2rem; border-radius: 10px; padding: 4px"
+      />
+      <input
+        id="chooseImage"
+        style="visibility: hidden"
+        type="file"
+        @change="upload"
+        accept="image/*"
       />
     </a-col>
   </a-row>
@@ -64,6 +79,14 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    triggerUpload() {
+      document.getElementById('chooseImage').click()
+    },
+    upload(e) {
+      this.editor.uploadImage(e)
+    },
   },
 }
 </script>

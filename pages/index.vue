@@ -30,29 +30,11 @@
       /></a-layout-content>
     </a-layout>
     <a-layout-footer>
-      <a-row>
-        <a-col>
-          <tools-palette
-            @click="(cb) => (mode = cb(mode, $refs.editor))"
-            :mode="mode"
-            :editor="$refs.editor"
-          />
-        </a-col>
-        <a-col>
-          <input
-            id="chooseImage"
-            style="visibility: hidden"
-            type="file"
-            @change="upload"
-            accept="image/*"
-          />
-          <a-icon
-            @click="triggerUpload"
-            type="cloud-upload"
-            style="font-size: 2.5rem; border-radius: 10px; padding: 4px"
-          />
-        </a-col>
-      </a-row>
+      <tools-palette
+        @click="(cb) => (mode = cb(mode, $refs.editor))"
+        :mode="mode"
+        :editor="$refs.editor"
+      />
     </a-layout-footer>
   </a-layout>
 </template>
@@ -95,45 +77,6 @@ export default {
     smthChanged() {
       this.$refs.editor.set(this.mode, { stroke: this.color })
     },
-    triggerUpload() {
-      document.getElementById('chooseImage').click()
-    },
-    upload(e) {
-      this.$refs.editor.uploadImage(e)
-    },
   },
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
