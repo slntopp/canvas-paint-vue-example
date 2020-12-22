@@ -30,7 +30,10 @@
       /></a-layout-content>
     </a-layout>
     <a-layout-footer>
-      <tools-palette @click="(cb) => (mode = cb(mode, $refs.editor))" />
+      <tools-palette
+        @click="(cb) => (mode = cb(mode, $refs.editor))"
+        :mode="mode"
+      />
     </a-layout-footer>
   </a-layout>
 </template>

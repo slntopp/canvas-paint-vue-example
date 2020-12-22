@@ -4,7 +4,8 @@
       <a-icon
         :type="tool.icon"
         @click="$emit('click', tool.cb)"
-        style="font-size: 3rem"
+        style="font-size: 3rem; border-radius: 10px; padding: 4px"
+        :class="mode == tool.mode ? 'selected' : ''"
       />
     </a-col>
   </a-row>
@@ -12,6 +13,12 @@
 
 <script>
 export default {
+  props: {
+    mode: {
+      required: true,
+      type: String,
+    },
+  },
   data() {
     return {
       tools: [
@@ -24,14 +31,17 @@ export default {
         },
         {
           icon: 'highlight',
+          mode: 'freeDrawing',
           cb: () => 'freeDrawing',
         },
         {
           icon: 'border',
+          mode: 'rect',
           cb: () => 'rect',
         },
         {
           icon: 'meh',
+          mode: 'circle',
           cb: () => 'circle',
         },
       ],
@@ -39,3 +49,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.selected {
+  background-color: white;
+}
+</style>
