@@ -1,7 +1,22 @@
 <template>
-  <div class="container">
-    <editor />
-  </div>
+  <a-layout>
+    <a-layout-header>
+      <h1 style="color: white">JokerShpoker Paint</h1>
+    </a-layout-header>
+    <a-layout>
+      <a-layout-sider>
+        <a-col :span="24"></a-col>
+      </a-layout-sider>
+      <a-layout-content
+        ><editor
+          ref="editor"
+          :canvas-width="1024"
+          :canvas-height="720"
+          editor-id="canvasId"
+      /></a-layout-content>
+    </a-layout>
+    <a-layout-footer></a-layout-footer>
+  </a-layout>
 </template>
 
 <script>
