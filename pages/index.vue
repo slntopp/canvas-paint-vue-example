@@ -1,32 +1,15 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">lab-paint</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <editor />
   </div>
 </template>
 
 <script>
-export default {}
+import Editor from '~/components/Editor.vue'
+
+export default {
+  components: { Editor },
+}
 </script>
 
 <style>
