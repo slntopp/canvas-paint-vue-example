@@ -25,6 +25,24 @@ export default {
     '@nuxtjs/eslint-module',
   ],
 
+  pwa: {
+    meta: {
+      name: "Paint by JokerShpoker",
+      description: "Paint от JokerShpoker",
+      mobileApp: true,
+      mobileAppIOS: true,
+      nativeUI: true
+    },
+    icon: {
+      fileName: "app-icon.png"
+    },
+    manifest: {
+      name: "Paint by JokerShpoker",
+      lang: "ru",
+      useWebmanifestExtension: false
+    }
+  },
+
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/pwa
