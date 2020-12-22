@@ -4,6 +4,6 @@ ADD . /app
 WORKDIR /app
 
 RUN yarn
-RUN yarn generate
+RUN yarn build
 
 ENTRYPOINT [ "yarn", "start" ]
