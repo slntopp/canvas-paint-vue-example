@@ -14,7 +14,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.10.1",
     "ant-design-vue": "^1.7.4",
-    "fabric": "4.3.1",
+    "fabric": "4.4.0",
     "less": "^4.1.0",
     "less-loader": "^8.0.0",
     "nuxt": "^2.15.4"
