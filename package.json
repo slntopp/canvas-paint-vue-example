@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.3.5",
-    "core-js": "^3.11.1",
+    "core-js": "^3.11.2",
     "ant-design-vue": "^1.7.4",
     "fabric": "4.4.0",
     "less": "^4.1.0",
