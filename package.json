@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.3.5",
-    "core-js": "^3.11.3",
     "ant-design-vue": "^1.7.5",
+    "core-js": "^3.12.0",
     "fabric": "4.4.0",
     "less": "^4.1.0",
     "less-loader": "^8.1.1",
-    "nuxt": "^2.15.4"
+    "nuxt": "^2.15.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^6.0.0",
@@ -27,6 +27,6 @@
     "eslint": "^7.25.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.1.2"
+    "prettier": "^2.3.0"
   }
 }
