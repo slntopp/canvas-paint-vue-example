@@ -1,4 +1,9 @@
-# lab-paint
+# Canvas Paint example in Vue.js / Nuxt.js
+
+## Synopsis
+
+Simple example on how one can make a web paint using just Vue and Canvas.
+Nuxt.js used just to simplify deployment
 
 ## Build Setup
 
