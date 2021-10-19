@@ -16,7 +16,7 @@
     "core-js": "^3.18.3",
     "fabric": "4.6.0",
     "less": "^4.1.2",
-    "less-loader": "^10.1.0",
+    "less-loader": "^10.2.0",
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
